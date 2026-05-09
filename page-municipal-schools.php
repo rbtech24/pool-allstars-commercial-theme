@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","serviceType":"Municipal and School Pool Service","provider":{"@type":"LocalBusiness","name":"<?php echo esc_js( pasc_company_name() ); ?>","telephone":"+1-800-394-7665"},"areaServed":"Florida","url":"<?php echo esc_url( get_permalink() ); ?>"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","serviceType":"Municipal and School Pool Service","provider":{"@type":"LocalBusiness","name":"<?php echo esc_js( pasc_company_name() ); ?>","telephone":"+1-833-968-4888"},"areaServed":"Florida","url":"<?php echo esc_url( get_permalink() ); ?>"}</script>
 <?php pasc_breadcrumbs( array( array( 'label' => 'Industries', 'url' => home_url( '/industries/' ) ), array( 'label' => 'Municipal & schools' ) ) ); ?>
 
 <section class="industry-hero"><div class="wrap"><div class="industry-hero-grid">

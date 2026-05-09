@@ -107,8 +107,8 @@ function pasc_breadcrumbs( $items = array() ) {
 /* ============================================================
  * HELPER: phone constants
  * ============================================================ */
-function pasc_phone_display() { return '(800) 394-POOL'; }
-function pasc_phone_tel()     { return '18003947665'; }
+function pasc_phone_display() { return '(833) 968-4888'; }
+function pasc_phone_tel()     { return '18339684888'; }
 function pasc_company_name()  { return 'Pool All-Stars Commercial'; }
 
 /* ============================================================
@@ -206,3 +206,105 @@ function pasc_create_or_get_page( $title, $slug, $parent = 0 ) {
  * ============================================================ */
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
+
+/* ============================================================
+ * CONTACT FORM — wp_mail() AJAX handler
+ *
+ * Uses WordPress's built-in wp_mail() to email proposal requests
+ * to the recipient configured in Settings → General → Admin Email
+ * (or override with PASC_RECIPIENT_EMAIL constant in wp-config.php).
+ *
+ * To use a real SMTP service (SendGrid, Postmark, Mailgun) for
+ * better deliverability than the WP host's PHP mail(), install:
+ *   - WP Mail SMTP plugin, OR
+ *   - FluentSMTP plugin
+ * They both intercept wp_mail() and route through your SMTP service.
+ * ============================================================ */
+function pasc_get_recipient_email() {
+	if ( defined( 'PASC_RECIPIENT_EMAIL' ) && PASC_RECIPIENT_EMAIL ) {
+		return PASC_RECIPIENT_EMAIL;
+	}
+	return get_option( 'admin_email' );
+}
+
+function pasc_handle_proposal_form() {
+	// Verify nonce
+	if ( ! isset( $_POST['pasc_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['pasc_nonce'] ) ), 'pasc_proposal_form' ) ) {
+		wp_send_json_error( array( 'message' => 'Security check failed. Please refresh and try again.' ), 403 );
+	}
+
+	// Honeypot anti-spam
+	if ( ! empty( $_POST['website'] ) ) {
+		wp_send_json_success( array( 'message' => 'Thanks!' ) ); // pretend success to spam bots
+	}
+
+	// Sanitize all inputs
+	$name         = isset( $_POST['name'] ) ? sanitize_text_field( wp_unslash( $_POST['name'] ) ) : '';
+	$company      = isset( $_POST['company'] ) ? sanitize_text_field( wp_unslash( $_POST['company'] ) ) : '';
+	$email        = isset( $_POST['email'] ) ? sanitize_email( wp_unslash( $_POST['email'] ) ) : '';
+	$phone        = isset( $_POST['phone'] ) ? sanitize_text_field( wp_unslash( $_POST['phone'] ) ) : '';
+	$propertytype = isset( $_POST['propertytype'] ) ? sanitize_text_field( wp_unslash( $_POST['propertytype'] ) ) : '';
+	$numpools     = isset( $_POST['numpools'] ) ? sanitize_text_field( wp_unslash( $_POST['numpools'] ) ) : '';
+	$zip          = isset( $_POST['zip'] ) ? preg_replace( '/[^0-9]/', '', wp_unslash( $_POST['zip'] ) ) : '';
+	$message      = isset( $_POST['message'] ) ? sanitize_textarea_field( wp_unslash( $_POST['message'] ) ) : '';
+
+	// Validate required fields
+	if ( empty( $name ) || empty( $company ) || empty( $email ) || empty( $phone ) || empty( $zip ) ) {
+		wp_send_json_error( array( 'message' => 'Please fill out all required fields.' ), 400 );
+	}
+	if ( ! is_email( $email ) ) {
+		wp_send_json_error( array( 'message' => 'Please enter a valid email address.' ), 400 );
+	}
+	if ( strlen( $zip ) !== 5 ) {
+		wp_send_json_error( array( 'message' => 'Please enter a valid 5-digit ZIP code.' ), 400 );
+	}
+
+	// Build email
+	$to      = pasc_get_recipient_email();
+	$subject = sprintf( '[Proposal Request] %s — %s', $company, $propertytype );
+	$body    = "New commercial pool service proposal request from " . pasc_company_name() . "\n\n";
+	$body   .= "----------------------------------------\n";
+	$body   .= "Name:           {$name}\n";
+	$body   .= "Company:        {$company}\n";
+	$body   .= "Email:          {$email}\n";
+	$body   .= "Phone:          {$phone}\n";
+	$body   .= "Property type:  {$propertytype}\n";
+	$body   .= "Number of pools:{$numpools}\n";
+	$body   .= "ZIP code:       {$zip}\n";
+	$body   .= "----------------------------------------\n\n";
+	if ( ! empty( $message ) ) {
+		$body .= "Message:\n{$message}\n\n";
+	}
+	$body   .= "----------------------------------------\n";
+	$body   .= "Submitted: " . current_time( 'mysql' ) . "\n";
+	$body   .= "From IP:   " . ( isset( $_SERVER['REMOTE_ADDR'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) ) : 'unknown' ) . "\n";
+
+	$headers = array(
+		'Content-Type: text/plain; charset=UTF-8',
+		'Reply-To: ' . sprintf( '%s <%s>', $name, $email ),
+	);
+
+	$sent = wp_mail( $to, $subject, $body, $headers );
+
+	if ( $sent ) {
+		wp_send_json_success( array( 'message' => 'Thanks — your proposal request is in. We\'ll respond within one business day.' ) );
+	} else {
+		wp_send_json_error( array( 'message' => 'Sorry, we could not send your message. Please call ' . pasc_phone_display() . '.' ), 500 );
+	}
+}
+add_action( 'wp_ajax_pasc_proposal',        'pasc_handle_proposal_form' );
+add_action( 'wp_ajax_nopriv_pasc_proposal', 'pasc_handle_proposal_form' );
+
+// Pass admin-ajax URL + nonce to the contact page JS
+function pasc_localize_form_data() {
+	if ( is_page( 'contact' ) ) {
+		wp_register_script( 'pasc-form', '', array(), PASC_VERSION, true );
+		wp_enqueue_script( 'pasc-form' );
+		wp_localize_script( 'pasc-form', 'pascForm', array(
+			'ajaxUrl' => admin_url( 'admin-ajax.php' ),
+			'nonce'   => wp_create_nonce( 'pasc_proposal_form' ),
+			'phone'   => pasc_phone_display(),
+		) );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'pasc_localize_form_data', 20 );

@@ -6,7 +6,7 @@
 get_header(); ?>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LocalBusiness","name":"<?php echo esc_js( pasc_company_name() ); ?>","description":"Commercial pool service for hotels, HOAs, condos, fitness facilities, and multi-property portfolios across Florida.","url":"<?php echo esc_url( home_url( '/' ) ); ?>","telephone":"+1-800-394-7665","priceRange":"$$","address":{"@type":"PostalAddress","addressRegion":"FL","addressCountry":"US"},"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"07:00","closes":"19:00"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"500"}}
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"<?php echo esc_js( pasc_company_name() ); ?>","description":"Commercial pool service for hotels, HOAs, condos, fitness facilities, and multi-property portfolios across Florida.","url":"<?php echo esc_url( home_url( '/' ) ); ?>","telephone":"+1-833-968-4888","priceRange":"$$","address":{"@type":"PostalAddress","addressRegion":"FL","addressCountry":"US"},"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"07:00","closes":"19:00"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"500"}}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
