@@ -42,8 +42,6 @@
       <h5>Company</h5>
       <ul>
         <li><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>">About</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/pricing/' ) ); ?>">Pricing</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/case-studies/' ) ); ?>">Case studies</a></li>
         <li><a href="<?php echo esc_url( home_url( '/resources/' ) ); ?>">Resources</a></li>
         <li><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">Contact</a></li>
         <li><a href="<?php echo esc_url( home_url( '/privacy/' ) ); ?>">Privacy</a></li>
