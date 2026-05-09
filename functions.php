@@ -639,7 +639,9 @@ function pasc_render_schema() {
 			array( 'What areas of Florida do you serve?', 'We service commercial properties across Tampa Bay, Orlando, Jacksonville, Sarasota, Naples, South Florida, the Space Coast, and Lakeland — statewide for commercial portfolios.' ),
 			array( 'Are your technicians certified?', 'All technicians hold Certified Pool/Spa Operator (CPO) certification from the Pool & Hot Tub Alliance and complete OSHA chemical handling training.' ),
 			array( 'What is your response time for repairs?', 'Same business day for diagnosis. Most repairs are completed within 48 hours. 24/7 emergency dispatch is available for contract customers.' ),
-			array( 'How does your billing work?', 'Standard billing is net-30 monthly invoicing in advance. Multi-property portfolios receive consolidated invoices with per-property line items for accounting allocation.' ),
+			array( 'Are you enrolled in vendor compliance platforms (RMIS, Compliance Depot, Notivus)?', 'Yes. We are enrolled and current with Yardi VendorCafe, RealPage Compliance Depot, RMIS, Notivus, OpsTechnology, Coupa, Vendor Verify, Net Vendor, and Nexus Vendor Connect. COI, W-9, business license, and OSHA training records are uploaded and maintained current. New properties typically have us approved within 24-48 hours instead of the standard 4-6 week new-vendor onboarding.' ),
+			array( 'What property management software do you work with?', 'Service reports and invoices are sent in formats compatible with AppFolio, Buildium, Yardi Voyager, MRI Software, RealPage, TownSq, FrontSteps, CINC Systems, Vantaca, Associa Connect, Entrata, and similar HOA / portfolio platforms. Email/PDF integration is standard; direct API webhooks supported where the platform offers them.' ),
+			array( 'How does your billing work?', 'Billing terms are matched to your AP cycle — net-30 by default, with net-15, net-45, or PO-based workflows accommodated for HOAs, REITs, and management companies. Multi-property portfolios receive consolidated invoices with per-property line items for accounting allocation.' ),
 		);
 		$faq_entities = array();
 		foreach ( $faqs as $f ) {

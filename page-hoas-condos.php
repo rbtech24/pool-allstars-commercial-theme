@@ -19,6 +19,44 @@
 
 <?php get_template_part( 'template-parts/services-grid' ); ?>
 
+<section class="two-col" style="background:var(--paper)">
+  <div class="wrap">
+    <div class="two-col-grid">
+      <div>
+        <h2>HOA management platforms <span class="red">we work with.</span></h2>
+        <p>Service reports, photo-confirmed visits, monthly board summaries, and invoices are formatted for the major HOA management platforms &mdash; email/PDF integration standard, direct API where the platform supports it.</p>
+        <ul>
+          <li><strong>AppFolio Property Manager</strong> &mdash; mid-market HOA / condo</li>
+          <li><strong>Buildium</strong> &mdash; small-mid HOA portfolios</li>
+          <li><strong>TownSq</strong> &mdash; HOA-specific platform</li>
+          <li><strong>FrontSteps</strong> &mdash; HOA management platform</li>
+          <li><strong>CINC Systems</strong> &mdash; HOA accounting + ops</li>
+          <li><strong>Vantaca</strong> &mdash; HOA management software</li>
+          <li><strong>Associa Connect</strong> &mdash; Associa-specific portal</li>
+          <li><strong>CondoCafe</strong> &mdash; condo association platform</li>
+          <li><strong>Yardi Voyager</strong> &mdash; large portfolio HOA + REIT</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Vendor compliance platforms <span class="red">we're enrolled in.</span></h2>
+        <p>HOAs managed by FirstService Residential, Castle Group, Associa, Greystar, Sentry Management, KW Property Management, and similar firms typically gate vendor access through compliance platforms. We're already enrolled and current &mdash; your property gets us approved in <strong>24-48 hours</strong>, not the typical 4-6 week new-vendor cycle.</p>
+        <ul>
+          <li><strong>Yardi VendorCafe</strong></li>
+          <li><strong>RealPage Compliance Depot</strong></li>
+          <li><strong>RMIS</strong> (Risk Management Information Systems)</li>
+          <li><strong>Notivus</strong></li>
+          <li><strong>OpsTechnology</strong></li>
+          <li><strong>Vendor Verify</strong></li>
+          <li><strong>Net Vendor</strong></li>
+          <li><strong>Nexus Vendor Connect</strong></li>
+          <li><strong>Coupa</strong> &mdash; for enterprise property managers</li>
+        </ul>
+        <p style="font-size:0.92rem;color:var(--gray);margin-top:1rem">COI, W-9, license, insurance, OSHA records uploaded and maintained current across every platform.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="proof block"><div class="wrap"><div class="section-head center"><span class="eyebrow">What HOA boards say</span></div><div class="testimonials">
   <div class="tcard"><div class="stars">★★★★★</div><q>They sent the COI before the contract was even signed. That's how you know you're dealing with pros, not a guy with a truck.</q><div class="who"><strong>Robert K.</strong><span>Board President · Lakewood HOA</span></div></div>
   <div class="tcard"><div class="stars">★★★★★</div><q>Monthly reports are formatted exactly for our board packets. No more chasing the vendor before each meeting.</q><div class="who"><strong>Patricia M.</strong><span>Treasurer · Bay Pointe Condos</span></div></div>

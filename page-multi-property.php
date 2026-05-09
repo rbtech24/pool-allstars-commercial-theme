@@ -19,6 +19,47 @@
 
 <?php get_template_part( 'template-parts/services-grid' ); ?>
 
+<section class="two-col" style="background:var(--paper)">
+  <div class="wrap">
+    <div class="two-col-grid">
+      <div>
+        <h2>Vendor compliance platforms <span class="red">we're enrolled in.</span></h2>
+        <p>Large property managers and REITs gate vendor access through compliance platforms — without enrollment you literally cannot bid. We're already enrolled and current. Your new property gets us approved in <strong>24-48 hours</strong>, not the typical 4-6 week new-vendor onboarding cycle.</p>
+        <ul>
+          <li><strong>Yardi VendorCafe</strong> &mdash; for properties on Yardi Voyager</li>
+          <li><strong>RealPage Compliance Depot</strong> &mdash; multifamily &amp; commercial</li>
+          <li><strong>RMIS</strong> (Risk Management Information Systems)</li>
+          <li><strong>Notivus</strong> &mdash; vendor compliance for property management</li>
+          <li><strong>OpsTechnology</strong> &mdash; RealPage maintenance &amp; vendor ordering</li>
+          <li><strong>Coupa</strong> &mdash; enterprise procurement &amp; vendor management</li>
+          <li><strong>Vendor Verify</strong> &mdash; vendor compliance platform</li>
+          <li><strong>Net Vendor</strong> &mdash; vendor compliance platform</li>
+          <li><strong>Nexus Vendor Connect</strong> &mdash; vendor compliance platform</li>
+        </ul>
+        <p style="font-size:0.92rem;color:var(--gray);margin-top:1rem">COI, W-9, business license, OSHA training records uploaded and maintained current across every platform. If your portfolio uses a platform not listed, we can typically enroll within 1-2 weeks.</p>
+      </div>
+      <div>
+        <h2>Portfolio software <span class="red">we work with.</span></h2>
+        <p>Service reports, photo logs, and invoices sent in formats compatible with the major REIT, multifamily, and portfolio platforms — at minimum via email/PDF; direct API webhooks where the platform supports it.</p>
+        <ul>
+          <li><strong>Yardi Voyager</strong> &mdash; REIT &amp; large portfolio standard</li>
+          <li><strong>MRI Software</strong> &mdash; enterprise property management</li>
+          <li><strong>RealPage</strong> &mdash; multifamily &amp; commercial portfolios</li>
+          <li><strong>AppFolio Property Manager</strong> &mdash; mid-market portfolios</li>
+          <li><strong>Entrata</strong> &mdash; multifamily property management</li>
+          <li><strong>Buildium</strong> &mdash; small-mid portfolio HOA / condo</li>
+          <li><strong>TownSq</strong> &mdash; HOA management software</li>
+          <li><strong>FrontSteps</strong> &mdash; HOA management platform</li>
+          <li><strong>CINC Systems</strong> &mdash; HOA management platform</li>
+          <li><strong>Vantaca</strong> &mdash; HOA management software</li>
+          <li><strong>Associa Connect</strong> &mdash; Associa-specific platform</li>
+          <li><strong>CondoCafe</strong> &mdash; condo association platform</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="proof block"><div class="wrap"><div class="section-head center"><span class="eyebrow">What portfolio operators say</span></div><div class="testimonials">
   <div class="tcard"><div class="stars">★★★★★</div><q>Pool All-Stars manages all eight of our portfolio properties on one contract. Their reporting is the cleanest I've seen in pool service.</q><div class="who"><strong>Maria S.</strong><span>VP Ops · Coastal Hospitality</span></div></div>
   <div class="tcard"><div class="stars">★★★★★</div><q>Twelve properties, one invoice, one PM. We were paying 4 vendors before. Saved us 22% on hard cost AND 12 hours/month of accounting.</q><div class="who"><strong>Karen J.</strong><span>Director · Sunstate Property Group</span></div></div>
