@@ -43,10 +43,12 @@ function pasc_enqueue_assets() {
 	// WP requires the root style.css to be enqueued so the theme registers properly
 	wp_enqueue_style( 'pasc-theme', get_stylesheet_uri(), array( 'pasc-style' ), PASC_VERSION );
 
-	// Leaflet (only on pages that need it)
+	// Leaflet (only on pages that need it). Loaded in <head>, not footer,
+	// because page-service-area.php runs an inline init script in the body
+	// that needs the global L to be defined before parse-time execution.
 	if ( is_page( array( 'service-area' ) ) || is_front_page() ) {
 		wp_enqueue_style( 'leaflet', 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css', array(), '1.9.4' );
-		wp_enqueue_script( 'leaflet', 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js', array(), '1.9.4', true );
+		wp_enqueue_script( 'leaflet', 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js', array(), '1.9.4', false );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'pasc_enqueue_assets' );

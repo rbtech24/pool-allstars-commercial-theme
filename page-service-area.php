@@ -44,14 +44,21 @@
 
 <script>
 (function(){
-  if(!document.getElementById('service-map')||typeof L==='undefined')return;
-  var m=L.map('service-map',{center:[27.85,-82.5],zoom:7,scrollWheelZoom:false});
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png',{attribution:'&copy; OpenStreetMap, &copy; CARTO',subdomains:'abcd',maxZoom:19}).addTo(m);
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_only_labels/{z}/{x}/{y}{r}.png',{subdomains:'abcd',maxZoom:19,pane:'shadowPane'}).addTo(m);
-  var c=[['Tampa',27.9506,-82.4572],['St. Petersburg',27.7676,-82.6403],['Clearwater',27.9659,-82.8001],['Sarasota',27.3364,-82.5307],['Bradenton',27.4989,-82.5748],['Orlando',28.5383,-81.3792],['Lakeland',28.0395,-81.9498],['Jacksonville',30.3322,-81.6557],['Naples',26.1420,-81.7948],['Fort Myers',26.6406,-81.8723],['Melbourne',28.0836,-80.6081],['Fort Lauderdale',26.1224,-80.1373],['Miami',25.7617,-80.1918]];
-  var ic=L.divIcon({className:'service-marker-icon',html:'<div class="service-marker-dot"></div>',iconSize:[18,18],iconAnchor:[9,9]});
-  c.forEach(function(x){L.marker([x[1],x[2]],{icon:ic}).addTo(m).bindTooltip(x[0],{permanent:false,direction:'top',offset:[0,-8],className:'city-tooltip'})});
-  m.fitBounds(L.featureGroup(c.map(function(x){return L.marker([x[1],x[2]])})).getBounds().pad(0.18));
+  function init(){
+    var el=document.getElementById('service-map');
+    if(!el||typeof L==='undefined')return;
+    if(el.dataset.pascMapInit)return;
+    el.dataset.pascMapInit='1';
+    var m=L.map('service-map',{center:[27.85,-82.5],zoom:7,scrollWheelZoom:false});
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png',{attribution:'&copy; OpenStreetMap, &copy; CARTO',subdomains:'abcd',maxZoom:19}).addTo(m);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_only_labels/{z}/{x}/{y}{r}.png',{subdomains:'abcd',maxZoom:19,pane:'shadowPane'}).addTo(m);
+    var c=[['Tampa',27.9506,-82.4572],['St. Petersburg',27.7676,-82.6403],['Clearwater',27.9659,-82.8001],['Sarasota',27.3364,-82.5307],['Bradenton',27.4989,-82.5748],['Orlando',28.5383,-81.3792],['Lakeland',28.0395,-81.9498],['Jacksonville',30.3322,-81.6557],['Naples',26.1420,-81.7948],['Fort Myers',26.6406,-81.8723],['Melbourne',28.0836,-80.6081],['Fort Lauderdale',26.1224,-80.1373],['Miami',25.7617,-80.1918]];
+    var ic=L.divIcon({className:'service-marker-icon',html:'<div class="service-marker-dot"></div>',iconSize:[18,18],iconAnchor:[9,9]});
+    c.forEach(function(x){L.marker([x[1],x[2]],{icon:ic}).addTo(m).bindTooltip(x[0],{permanent:false,direction:'top',offset:[0,-8],className:'city-tooltip'})});
+    m.fitBounds(L.featureGroup(c.map(function(x){return L.marker([x[1],x[2]])})).getBounds().pad(0.18));
+    setTimeout(function(){m.invalidateSize()},200);
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',init)}else{init()}
 })();
 </script>
 
