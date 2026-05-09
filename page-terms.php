@@ -13,7 +13,7 @@
 <p>Services are described in your service agreement and proposal. Standard commercial weekly maintenance includes water chemistry, brushing, vacuuming, basket emptying, equipment inspection, and a service report. Additional services (equipment repair, acid washing, renovation) are billed separately unless included.</p>
 
 <h2>3. Pricing &amp; billing</h2>
-<p>Monthly service is billed in advance on net-30 terms unless otherwise agreed. Repair work and additional services are billed upon completion. Prices are guaranteed for the term of the service agreement.</p>
+<p>Monthly service is billed in advance with payment terms matched to Customer's AP cycle — net-30 by default, with net-15, net-45, or PO-based workflows accommodated upon agreement at contract signing. Repair work and additional services are billed upon completion. Prices are guaranteed for the term of the service agreement.</p>
 
 <h2>4. Term &amp; cancellation</h2>
 <p>Standard contracts are month-to-month with 30 days' written notice for cancellation by either party. Multi-year agreements may include specific cancellation terms outlined in the signed agreement.</p>

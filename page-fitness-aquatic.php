@@ -20,7 +20,7 @@
 <?php get_template_part( 'template-parts/services-grid' ); ?>
 
 <section class="proof block"><div class="wrap"><div class="section-head center"><span class="eyebrow">What aquatic operators say</span></div><div class="testimonials">
-  <div class="tcard"><div class="stars">★★★★★</div><q>We've been on monthly net-30 billing across three properties for two years. Same tech on every route. No surprises.</q><div class="who"><strong>David L.</strong><span>Facilities Director · Sunstate Fitness</span></div></div>
+  <div class="tcard"><div class="stars">★★★★★</div><q>They matched our AP cycle from day one — net-15 with our PO workflow. Same tech on every route, three properties under one contract, no surprises in two years.</q><div class="who"><strong>David L.</strong><span>Facilities Director · Sunstate Fitness</span></div></div>
   <div class="tcard"><div class="stars">★★★★★</div><q>Health inspector showed up unannounced. Our log book was perfect. Pool All-Stars formats it that way on purpose.</q><div class="who"><strong>Sarah B.</strong><span>Aquatic Director · Bay Area YMCA</span></div></div>
   <div class="tcard"><div class="stars">★★★★★</div><q>Member complaints about chlorine smell dropped to zero after they recalibrated our combined chlorine targets.</q><div class="who"><strong>Mike P.</strong><span>GM · Coastal Athletic Club</span></div></div>
 </div></div></section>

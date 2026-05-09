@@ -29,7 +29,7 @@ get_header(); ?>
           <span class="path-tag">Get a custom proposal</span>
           <h3>Send us your scope or RFP. Proposal back in 24 hours.</h3>
           <p>Fixed-rate pricing, COI on file, transition plan that doesn't disrupt guests, members, or residents.</p>
-          <div class="commercial-cta-row"><span style="font-weight:600;font-size:0.86rem;color:var(--ink)">Net-30 billing &amp; volume pricing</span><span class="btn-go">Request proposal</span></div>
+          <div class="commercial-cta-row"><span style="font-weight:600;font-size:0.86rem;color:var(--ink)">Flexible billing Net-30 billing &amp; volume pricingamp; volume pricing</span><span class="btn-go">Request proposal</span></div>
         </a>
         <a class="path-card" href="<?php echo esc_url( home_url( '/industries/' ) ); ?>" style="border-color:var(--line)">
           <span class="path-tag">Browse by property type</span>
@@ -81,7 +81,7 @@ get_header(); ?>
         <div class="cc-check">Certificate of insurance on file in 24 hours</div>
         <div class="cc-check">Dedicated account manager, single point of contact</div>
         <div class="cc-check">Health-code-ready chemistry &amp; logs</div>
-        <div class="cc-check">Net-30 billing, multi-property invoicing</div>
+        <div class="cc-check">AP-cycle billing, multi-property invoicing</div>
         <div class="cc-check">Photo-confirmed visits &amp; reporting</div>
       </div>
     </div>
@@ -147,6 +147,8 @@ get_header(); ?>
       <div class="faq-item"><details><summary>What areas of Florida do you serve?</summary><p>Tampa Bay, Orlando, Jacksonville, Sarasota, Naples, South Florida, Space Coast — statewide. <a href="<?php echo esc_url( home_url( '/service-area/' ) ); ?>" style="color:var(--red);font-weight:600">See all service areas</a>.</p></details></div>
       <div class="faq-item"><details><summary>Are your technicians certified?</summary><p>Yes. All technicians hold Certified Pool/Spa Operator (CPO) certification and complete OSHA chemical handling training.</p></details></div>
       <div class="faq-item"><details><summary>What is your response time for repairs?</summary><p>Same business day for diagnosis. Most repairs completed within 48 hours. 24/7 emergency dispatch is available for contract customers.</p></details></div>
+      <div class="faq-item"><details><summary>Are you enrolled in vendor compliance platforms (RMIS, Compliance Depot, Notivus, etc.)?</summary><p>Yes. We are enrolled and current with <strong>Yardi VendorCafe, RealPage Compliance Depot, RMIS, Notivus, OpsTechnology, Coupa, Vendor Verify, Net Vendor, and Nexus Vendor Connect</strong>. COI, W-9, business license, and OSHA training records are uploaded and maintained current. New properties can typically have us approved within 24-48 hours.</p></details></div>
+      <div class="faq-item"><details><summary>What property management software do you work with?</summary><p>Service reports and invoices are sent in formats compatible with <strong>AppFolio, Buildium, Yardi Voyager, MRI Software, RealPage, TownSq, FrontSteps, CINC Systems, Vantaca, Associa Connect, Entrata</strong>, and similar HOA / portfolio platforms. Email/PDF integration is standard; direct API webhooks supported where the platform offers them.</p></details></div>
       <div class="faq-item"><details><summary>How does your billing work?</summary><p>Net-30 monthly invoicing in advance. Multi-property portfolios receive consolidated invoices with per-property line items.</p></details></div>
     </div>
   </div>

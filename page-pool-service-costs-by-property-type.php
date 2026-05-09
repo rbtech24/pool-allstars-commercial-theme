@@ -52,7 +52,7 @@
 
     <h2>Municipal &amp; school facilities</h2>
     <p><strong>Range: $900–$3,500/month per facility</strong></p>
-    <p>Municipal community pool (single pool): $900–$1,500/month. K-12 school facility pool: $1,000–$1,700/month. Aquatic complex (multiple pools, university, large community center): $2,200–$3,500+/month. Net-30 procurement billing is standard.</p>
+    <p>Municipal community pool (single pool): $900–$1,500/month. K-12 school facility pool: $1,000–$1,700/month. Aquatic complex (multiple pools, university, large community center): $2,200–$3,500+/month. Billing terms accommodated to procurement office standards (net-30, net-45, or PO-based workflows).</p>
     <p>Cost drivers: RFP-formatted reporting overhead, NPDES discharge documentation, public-pool 64E-9 compliance with longer log retention requirements (24+ months), W-2 employee verification for child-safe-environment compliance at school facilities.</p>
 
     <h2>Water parks &amp; aquatic attractions</h2>

@@ -14,7 +14,7 @@
 
 <section class="two-col"><div class="wrap"><div class="two-col-grid">
   <div><h2>Built for <span class="red">public procurement.</span></h2><p>City rec centers, county aquatic complexes, K-12 swim programs, university pools. Public pools have specific compliance requirements (FAC bigger, CYA tighter, log retention longer) and audit cycles that private vendors often fumble.</p><p>We know the spec. We've serviced municipal and school facilities across Florida since 2014.</p></div>
-  <div><h2>What public sector needs.</h2><ul><li>RFP responses formatted to your solicitation</li><li>W-9, COI, business license, references provided</li><li>Public-pool chemistry standards (FL Admin Code 64E-9)</li><li>Daily/weekly log retention to spec</li><li>NPDES &amp; backwash discharge compliance</li><li>Net-30 invoicing matched to your AP cycle</li></ul></div>
+  <div><h2>What public sector needs.</h2><ul><li>RFP responses formatted to your solicitation</li><li>W-9, COI, business license, references provided</li><li>Public-pool chemistry standards (FL Admin Code 64E-9)</li><li>Daily/weekly log retention to spec</li><li>NPDES &amp; backwash discharge compliance</li><li>Invoicing matched to your AP cycle (net-30, net-45, or PO-based)</li></ul></div>
 </div></div></section>
 
 <?php get_template_part( 'template-parts/services-grid' ); ?>
