@@ -251,6 +251,140 @@ function pasc_seo_registry() {
 			'title' => 'Commercial Pool Service Winter Haven, FL | Polk County',
 			'desc'  => 'Commercial pool service in Winter Haven, FL — Chain of Lakes, Cypress Gardens area. Hotels, retirement community HOAs, fitness facilities, vacation homes.',
 		),
+		// Tier 2 city pages — remaining 27 cities (5 Tampa Bay + 4 Orlando + 5 South FL + 3 Jax + 4 SW FL + 3 Space Coast + 3 Lakeland)
+		'st-petersburg' => array(
+			'title' => 'Commercial Pool Service St. Petersburg, FL | Pier District &amp; Beach',
+			'desc'  => 'Commercial pool service in St. Petersburg, FL — Pier District boutique hotels, Old Northeast condos, St. Pete Beach resort properties. CPO certified, COI in 24 hours.',
+		),
+		'clearwater' => array(
+			'title' => 'Commercial Pool Service Clearwater, FL | Beach Resorts &amp; HOAs',
+			'desc'  => 'Commercial pool service in Clearwater, FL — Clearwater Beach gulf-front resorts, Belleair private clubs, Countryside HOAs. CPO certified, COI in 24 hours.',
+		),
+		'sarasota' => array(
+			'title' => 'Commercial Pool Service Sarasota, FL | Bayfront &amp; Lakewood Ranch',
+			'desc'  => 'Commercial pool service in Sarasota, FL — Lido Key resorts, Longboat Key condos, downtown Sarasota hotels, Lakewood Ranch master-planned communities.',
+		),
+		'bradenton' => array(
+			'title' => 'Commercial Pool Service Bradenton, FL | Anna Maria Island',
+			'desc'  => 'Commercial pool service in Bradenton, FL — Anna Maria Island vacation rentals, Holmes Beach condos, downtown boutique hotels, Lakewood Ranch HOAs.',
+		),
+		'lakewood-ranch' => array(
+			'title' => 'Commercial Pool Service Lakewood Ranch, FL | Multi-Village HOAs',
+			'desc'  => 'Commercial pool service in Lakewood Ranch — Country Club East, Esplanade, Del Webb, Lakewood National. Multi-village HOA portfolio service with consolidated invoicing.',
+		),
+		'kissimmee' => array(
+			'title' => 'Commercial Pool Service Kissimmee, FL | Disney-Area Vacation Rentals',
+			'desc'  => 'Commercial pool service in Kissimmee, FL — Reunion, ChampionsGate, Solara Resort, Celebration HOAs. Vacation rental turnover-day cleanings, photo-confirmed visits.',
+		),
+		'lake-mary' => array(
+			'title' => 'Commercial Pool Service Lake Mary, FL | Heathrow &amp; Corporate Corridor',
+			'desc'  => 'Commercial pool service in Lake Mary, FL — Heathrow private community, Lake Mary Town Center corporate hotels, Sanford boutique hospitality.',
+		),
+		'winter-park' => array(
+			'title' => 'Commercial Pool Service Winter Park, FL | Park Avenue &amp; Chain of Lakes',
+			'desc'  => 'Commercial pool service in Winter Park, FL — Park Avenue boutique hotels, Chain of Lakes residential HOAs, Rollins College area, Maitland corporate hotels.',
+		),
+		'clermont' => array(
+			'title' => 'Commercial Pool Service Clermont, FL | Lake County Golf Communities',
+			'desc'  => 'Commercial pool service in Clermont, FL — Kings Ridge, Heritage Hills, Sanctuary Ridge golf communities, Lake Minneola resorts, NTC corridor hotels.',
+		),
+		'fort-lauderdale' => array(
+			'title' => 'Commercial Pool Service Fort Lauderdale, FL | Beach Strip &amp; Las Olas',
+			'desc'  => 'Commercial pool service in Fort Lauderdale, FL — Beach Strip resorts, Las Olas boutique hotels, Galt Mile condos, downtown corporate hospitality.',
+		),
+		'boca-raton' => array(
+			'title' => 'Commercial Pool Service Boca Raton, FL | Country Clubs &amp; Mediterranean HOAs',
+			'desc'  => 'Commercial pool service in Boca Raton, FL — Boca West, Polo Club, Woodfield Country Club, oceanfront condos along A1A. Membership-grade private club tier.',
+		),
+		'west-palm-beach' => array(
+			'title' => 'Commercial Pool Service West Palm Beach, FL | Singer Island &amp; Estate',
+			'desc'  => 'Commercial pool service in West Palm Beach, FL — Downtown corporate hotels, Palm Beach barrier island estates, Singer Island resorts, Wellington equestrian community.',
+		),
+		'hollywood-fl' => array(
+			'title' => 'Commercial Pool Service Hollywood, FL | Broadwalk &amp; Hard Rock Area',
+			'desc'  => 'Commercial pool service in Hollywood, FL — Hollywood Beach Broadwalk corridor, Hard Rock Hotel area, Hallandale Beach high-rise condos, downtown historic district.',
+		),
+		'aventura' => array(
+			'title' => 'Commercial Pool Service Aventura, FL | High-Rise Condo Corridor',
+			'desc'  => 'Commercial pool service in Aventura, FL — Williams Island, Turnberry Isle, Sunny Isles Beach high-rise condos. Pre-dawn service, building manager coordination.',
+		),
+		'ponte-vedra' => array(
+			'title' => 'Commercial Pool Service Ponte Vedra, FL | TPC Sawgrass &amp; Country Clubs',
+			'desc'  => 'Commercial pool service in Ponte Vedra Beach, FL — TPC Sawgrass area, Sawgrass Country Club, Marsh Landing, Ponte Vedra Inn &amp; Club.',
+		),
+		'st-augustine' => array(
+			'title' => 'Commercial Pool Service St. Augustine, FL | Historic District &amp; Beach',
+			'desc'  => 'Commercial pool service in St. Augustine, FL — Historic district boutique hotels, St. Augustine Beach resorts, World Golf Village, Anastasia Island vacation rentals.',
+		),
+		'amelia-island' => array(
+			'title' => 'Commercial Pool Service Amelia Island, FL | Ritz-Carlton &amp; Plantation',
+			'desc'  => 'Commercial pool service on Amelia Island, FL — Ritz-Carlton Amelia, Omni Plantation, Amelia Island Plantation private community, historic Fernandina Beach.',
+		),
+		'marco-island' => array(
+			'title' => 'Commercial Pool Service Marco Island, FL | JW Marriott &amp; Hilton',
+			'desc'  => 'Commercial pool service on Marco Island, FL — JW Marriott Marco Island Beach Resort, Hilton Marco Island, oceanfront condos along Collier Boulevard.',
+		),
+		'fort-myers' => array(
+			'title' => 'Commercial Pool Service Fort Myers, FL | Beach &amp; Cape Coral',
+			'desc'  => 'Commercial pool service in Fort Myers, FL — Fort Myers Beach resorts, Cape Coral canal-front residential, downtown River District boutique hotels, Estero HOAs.',
+		),
+		'bonita-springs' => array(
+			'title' => 'Commercial Pool Service Bonita Springs, FL | Bonita Bay &amp; Mediterra',
+			'desc'  => 'Commercial pool service in Bonita Springs, FL — Bonita Bay, Pelican Landing, Mediterra, Pelican Marsh private golf communities, gulf-front condos.',
+		),
+		'sanibel' => array(
+			'title' => 'Commercial Pool Service Sanibel &amp; Captiva, FL | Barrier Islands',
+			'desc'  => 'Commercial pool service on Sanibel and Captiva islands, FL — South Seas Plantation, oceanfront condo associations, beachfront vacation rental portfolios.',
+		),
+		'cocoa-beach' => array(
+			'title' => 'Commercial Pool Service Cocoa Beach, FL | Atlantic Coast Resorts',
+			'desc'  => 'Commercial pool service in Cocoa Beach, FL — A1A oceanfront resorts, Cape Canaveral cruise-port hotels, Cocoa Village historic district hospitality.',
+		),
+		'vero-beach' => array(
+			'title' => 'Commercial Pool Service Vero Beach, FL | John\'s Island &amp; Ocean Drive',
+			'desc'  => 'Commercial pool service in Vero Beach, FL — John\'s Island, Windsor Club, Orchid Island private clubs, Ocean Drive oceanfront condos, Costa d\'Este resort.',
+		),
+		'titusville' => array(
+			'title' => 'Commercial Pool Service Titusville, FL | KSC Corridor Hotels',
+			'desc'  => 'Commercial pool service in Titusville, FL — Kennedy Space Center corridor corporate hotels, Indian River residential HOAs, downtown historic district properties.',
+		),
+		'lakeland-city' => array(
+			'title' => 'Commercial Pool Service Lakeland, FL | Florida Southern &amp; Lake Hollingsworth',
+			'desc'  => 'Commercial pool service in Lakeland city, FL — Downtown boutique hotels, Lake Hollingsworth historic residential, Florida Southern College area, I-4 corporate corridor.',
+		),
+		'davenport' => array(
+			'title' => 'Commercial Pool Service Davenport, FL | Disney-Area Vacation Rentals',
+			'desc'  => 'Commercial pool service in Davenport, FL — ChampionsGate, Solterra Resort, Windsor at Westside vacation rental communities. Turnover-day service coordination.',
+		),
+		'auburndale' => array(
+			'title' => 'Commercial Pool Service Auburndale, FL | I-4 Corridor &amp; Lakefront',
+			'desc'  => 'Commercial pool service in Auburndale, FL — I-4 corridor corporate hotels, Lake Ariana &amp; Lake Stella residential community pools, Polk State College area.',
+		),
+		// Tier 2 articles — 6 more long-form guides
+		'pool-service-costs-by-property-type' => array(
+			'title' => 'Commercial Pool Service Costs by Property Type | Florida Pricing Guide',
+			'desc'  => 'What commercial pool service actually costs in Florida — broken down by property type: hotels, HOAs, fitness, multi-property, vacation rentals, country clubs.',
+		),
+		'hurricane-recovery-playbook' => array(
+			'title' => 'Hurricane Pool Recovery Playbook | Commercial Property Guide',
+			'desc'  => 'Step-by-step hurricane pool recovery for Florida commercial properties — pre-storm prep, post-storm chemistry rebuild, equipment recovery, insurance documentation.',
+		),
+		'hoa-reserve-study-pool-integration' => array(
+			'title' => 'HOA Reserve Study Pool Integration | Florida Board Guide',
+			'desc'  => 'How to integrate commercial pool maintenance and capital projects into your HOA reserve study. Resurfacing cycles, equipment lifespan, board-approved budgeting.',
+		),
+		'fl-pool-contractor-licensing' => array(
+			'title' => 'Florida Pool Service Contractor Licensing | What to Verify',
+			'desc'  => 'How to verify a Florida commercial pool service contractor: state license, county registration, CPO certification, insurance coverage, BBB accreditation.',
+		),
+		'brand-flag-pool-qa-compliance' => array(
+			'title' => 'Hotel Brand-Flag Pool QA Compliance | Marriott, Hilton, IHG, Choice',
+			'desc'  => 'Brand-flag pool QA standards for Florida hotels — Marriott Bonvoy QA, Hilton Quality Assurance, IHG Brand Safety, Choice Hotels inspection criteria.',
+		),
+		'salt-air-corrosion-prevention' => array(
+			'title' => 'Salt-Air Corrosion Prevention | Coastal Florida Pool Equipment',
+			'desc'  => 'How to extend pool equipment life on Florida coastal commercial properties. Pump rinse protocols, salt cell maintenance, electronics protection, replacement cycles.',
+		),
 	);
 	return apply_filters( 'pasc_seo_registry', $registry );
 }
@@ -1004,13 +1138,47 @@ function pasc_create_pages_on_activation() {
 
 	// City pages — under their respective region
 	$cities = array(
-		array( 'Tampa',         'tampa',             'tampa-bay' ),
-		array( 'Orlando',       'orlando-city',      'orlando' ),
-		array( 'Miami',         'miami',             'south-florida' ),
-		array( 'Jacksonville',  'jacksonville-city', 'jacksonville' ),
-		array( 'Naples',        'naples',            'sw-florida' ),
-		array( 'Melbourne',     'melbourne',         'space-coast' ),
-		array( 'Winter Haven',  'winter-haven',      'lakeland' ),
+		// Tampa Bay
+		array( 'Tampa',                'tampa',             'tampa-bay' ),
+		array( 'St. Petersburg',       'st-petersburg',     'tampa-bay' ),
+		array( 'Clearwater',           'clearwater',        'tampa-bay' ),
+		array( 'Sarasota',             'sarasota',          'tampa-bay' ),
+		array( 'Bradenton',            'bradenton',         'tampa-bay' ),
+		array( 'Lakewood Ranch',       'lakewood-ranch',    'tampa-bay' ),
+		// Orlando
+		array( 'Orlando',              'orlando-city',      'orlando' ),
+		array( 'Kissimmee',            'kissimmee',         'orlando' ),
+		array( 'Lake Mary',            'lake-mary',         'orlando' ),
+		array( 'Winter Park',          'winter-park',       'orlando' ),
+		array( 'Clermont',             'clermont',          'orlando' ),
+		// South Florida
+		array( 'Miami',                'miami',             'south-florida' ),
+		array( 'Fort Lauderdale',      'fort-lauderdale',   'south-florida' ),
+		array( 'Boca Raton',           'boca-raton',        'south-florida' ),
+		array( 'West Palm Beach',      'west-palm-beach',   'south-florida' ),
+		array( 'Hollywood',            'hollywood-fl',      'south-florida' ),
+		array( 'Aventura',             'aventura',          'south-florida' ),
+		// Jacksonville
+		array( 'Jacksonville',         'jacksonville-city', 'jacksonville' ),
+		array( 'Ponte Vedra Beach',    'ponte-vedra',       'jacksonville' ),
+		array( 'St. Augustine',        'st-augustine',      'jacksonville' ),
+		array( 'Amelia Island',        'amelia-island',     'jacksonville' ),
+		// SW Florida
+		array( 'Naples',               'naples',            'sw-florida' ),
+		array( 'Marco Island',         'marco-island',      'sw-florida' ),
+		array( 'Fort Myers',           'fort-myers',        'sw-florida' ),
+		array( 'Bonita Springs',       'bonita-springs',    'sw-florida' ),
+		array( 'Sanibel',              'sanibel',           'sw-florida' ),
+		// Space Coast
+		array( 'Melbourne',            'melbourne',         'space-coast' ),
+		array( 'Cocoa Beach',          'cocoa-beach',       'space-coast' ),
+		array( 'Vero Beach',           'vero-beach',        'space-coast' ),
+		array( 'Titusville',           'titusville',        'space-coast' ),
+		// Lakeland & Polk
+		array( 'Winter Haven',         'winter-haven',      'lakeland' ),
+		array( 'Lakeland',             'lakeland-city',     'lakeland' ),
+		array( 'Davenport',            'davenport',         'lakeland' ),
+		array( 'Auburndale',           'auburndale',        'lakeland' ),
 	);
 	foreach ( $cities as $city ) {
 		$parent_id = isset( $area_ids[ $city[2] ] ) ? $area_ids[ $city[2] ] : 0;
@@ -1022,10 +1190,16 @@ function pasc_create_pages_on_activation() {
 	pasc_create_or_get_page( 'Case Studies', 'case-studies', 0 );
 	$parent_resources = pasc_create_or_get_page( 'Resources', 'resources', 0 );
 	$resources = array(
-		'How to Write a Commercial Pool Service RFP'        => 'how-to-write-pool-service-rfp',
-		'Florida Pool Chemistry Compliance Guide'           => 'fl-pool-chemistry-compliance',
-		'When to Fire Your Pool Service Vendor: 8 Signs'    => 'when-to-fire-your-pool-vendor',
-		'Commercial Pool Service Contract Terms Explained'  => 'pool-service-contract-terms',
+		'How to Write a Commercial Pool Service RFP'         => 'how-to-write-pool-service-rfp',
+		'Florida Pool Chemistry Compliance Guide'            => 'fl-pool-chemistry-compliance',
+		'When to Fire Your Pool Service Vendor: 8 Signs'     => 'when-to-fire-your-pool-vendor',
+		'Commercial Pool Service Contract Terms Explained'   => 'pool-service-contract-terms',
+		'Commercial Pool Service Costs by Property Type'     => 'pool-service-costs-by-property-type',
+		'Hurricane Pool Recovery Playbook'                   => 'hurricane-recovery-playbook',
+		'HOA Reserve Study Pool Integration'                 => 'hoa-reserve-study-pool-integration',
+		'Florida Pool Service Contractor Licensing'          => 'fl-pool-contractor-licensing',
+		'Hotel Brand-Flag Pool QA Compliance'                => 'brand-flag-pool-qa-compliance',
+		'Salt-Air Corrosion Prevention for Coastal Pools'    => 'salt-air-corrosion-prevention',
 	);
 	foreach ( $resources as $title => $slug ) {
 		pasc_create_or_get_page( $title, $slug, $parent_resources );
