@@ -1,0 +1,16 @@
+/*
+Theme Name: Pool All-Stars Commercial
+Theme URI: https://poolallstarscommercial.com/
+Author: Pool All-Stars
+Author URI: https://poolallstars.com/
+Description: Commercial pool service site for Pool All-Stars Commercial — Florida property managers. Mirrors the static HTML site identically with WordPress flexibility for content edits.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.4
+Requires PHP: 8.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: pool-allstars-commercial
+*/
+
+/* Actual styles live in assets/css/style.css for clean enqueue. This file exists only for the WP theme header. */
