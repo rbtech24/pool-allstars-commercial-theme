@@ -52,27 +52,198 @@ function pasc_enqueue_assets() {
 add_action( 'wp_enqueue_scripts', 'pasc_enqueue_assets' );
 
 /* ============================================================
- * SEO META TAGS (canonical, OG, Twitter)
+ * SEO REGISTRY — per-page title, meta description, OG data
+ *
+ * Custom titles and descriptions for every page on the site.
+ * Override at any time via the `pasc_seo_registry` filter, OR by
+ * installing Yoast / Rank Math (this system stands down automatically
+ * when those plugins are active).
+ * ============================================================ */
+function pasc_seo_registry() {
+	$registry = array(
+		'home' => array(
+			'title' => 'Commercial Pool Service Florida | Pool All-Stars',
+			'desc'  => 'Florida commercial pool service for hotels, HOAs, condos, fitness & multi-property portfolios. COI in 24 hours, dedicated tech, photo-confirmed reports. Call (833) 968-4888.',
+		),
+		'about' => array(
+			'title' => 'About Pool All-Stars | 17 Years of Florida Commercial Pool Service',
+			'desc'  => 'Pool All-Stars has serviced Florida commercial pools since 2009 — 5,000+ pools, BBB A+, CPO-certified techs, dedicated account managers. Built for property managers.',
+		),
+		'contact' => array(
+			'title' => 'Contact Pool All-Stars | Florida Commercial Pool Service Quote',
+			'desc'  => 'Request a fixed-rate Florida commercial pool service proposal. COI in 24 hours, dedicated account manager, response within 1 business day. Call (833) 968-4888.',
+		),
+		'services' => array(
+			'title' => 'Commercial Pool Services Florida | 8 Specialties Under 1 Contract',
+			'desc'  => 'Florida commercial pool services: weekly maintenance, water chemistry, equipment repair, filter cleaning, green pool recovery, leak detection, acid washing, renovation.',
+		),
+		'industries' => array(
+			'title' => 'Commercial Pool Service by Industry | Florida | Pool All-Stars',
+			'desc'  => 'Florida commercial pool service specialized by property type — hotels, HOAs, condos, fitness, multi-property, vacation rentals, water parks, country clubs, schools.',
+		),
+		'service-area' => array(
+			'title' => 'Florida Commercial Pool Service Areas | 7 Regions Statewide',
+			'desc'  => 'Pool All-Stars commercial pool service across all of Florida — Tampa Bay, Orlando, South Florida, Jacksonville, SW Florida, Space Coast, Lakeland. Find your region.',
+		),
+		// Service detail pages
+		'weekly-maintenance' => array(
+			'title' => 'Weekly Commercial Pool Maintenance Florida | 12-Point Checklist',
+			'desc'  => 'Florida weekly commercial pool maintenance: 12-point checklist, dedicated technician, GPS-verified visits, same-day photo report. Hotels, HOAs, fitness, multi-property.',
+		),
+		'water-chemistry' => array(
+			'title' => 'Commercial Pool Water Chemistry Florida | FAC 64E-9 Compliant',
+			'desc'  => 'Florida commercial pool water chemistry: FAC, pH, alkalinity, calcium, CYA, TDS — balanced to FL Admin Code 64E-9. Daily logs, audit-ready, CPO-certified techs.',
+		),
+		'equipment-repair' => array(
+			'title' => 'Commercial Pool Equipment Repair Florida | Same-Day Diagnosis',
+			'desc'  => 'Florida commercial pool equipment repair: pumps, motors, salt cells, heaters, automation, plumbing. Same-day diagnosis, in-house W-2 techs, no subcontracting.',
+		),
+		'filter-cleaning' => array(
+			'title' => 'Commercial Pool Filter Cleaning Florida | DE, Cartridge, Sand',
+			'desc'  => 'Florida commercial pool filter cleaning: DE, cartridge, sand, regenerative DE. Scheduled by PSI rise & bather load — not a generic calendar. Cleanest water, lowest cost.',
+		),
+		'green-pool-recovery' => array(
+			'title' => 'Green Pool Recovery Florida | Swim-Ready in 3-7 Days',
+			'desc'  => 'Florida green pool recovery — algae-clouded commercial pool restored swim-ready in 3-7 days. Photo-documented progress, post-storm response, hotel & HOA emergency service.',
+		),
+		'leak-detection' => array(
+			'title' => 'Commercial Pool Leak Detection Florida | Non-Destructive',
+			'desc'  => 'Florida commercial pool leak detection: pressure testing, dye testing, electronic detection. Find leaks without draining or destructive digging. Most repairs same week.',
+		),
+		'acid-washing' => array(
+			'title' => 'Commercial Pool Acid Washing Florida | Plaster Restoration',
+			'desc'  => 'Florida commercial pool acid washing & plaster restoration. Removes mineral stains, ground-in algae. Off-peak scheduling so hotels, HOAs, clubs avoid downtime impact.',
+		),
+		'pool-renovation' => array(
+			'title' => 'Commercial Pool Renovation Florida | Resurface, Tile, Equipment',
+			'desc'  => 'Florida commercial pool renovation: resurface, tile, coping, equipment upgrades, ADA. HOA-board-ready quotes, hotel shoulder-season scheduling.',
+		),
+		// Industry pages
+		'hotels-resorts' => array(
+			'title' => 'Hotel Pool Service Florida | Brand-Standard Cleanliness',
+			'desc'  => 'Florida hotel & resort pool service. Dawn cleanings, brand-standard finish, photo-confirmed visits sent to GM + front desk. Limited-service to full-service to condo-hotel.',
+		),
+		'hoas-condos' => array(
+			'title' => 'HOA & Condo Pool Service Florida | Board-Ready Reports',
+			'desc'  => 'Florida HOA & condo pool service. Monthly board-ready reports, flat-rate billing, dedicated tech, 24-hr COI. Self-managed or FirstService/Castle/Associa.',
+		),
+		'fitness-aquatic' => array(
+			'title' => 'Fitness Pool & Aquatic Center Service Florida | Health-Code',
+			'desc'  => 'Florida fitness center & aquatic facility pool service. Member-load chlorine control, FAC compliance logs, swim-meet clarity, hot tub bromine. CPO-certified techs.',
+		),
+		'multi-property' => array(
+			'title' => 'Multi-Property Pool Service Florida | One Contract Portfolios',
+			'desc'  => 'Florida multi-property pool service. Single contract for 3-30+ properties, consolidated invoicing, dedicated account manager, volume pricing. Hospitality, condo, REIT.',
+		),
+		'municipal-schools' => array(
+			'title' => 'Municipal & School Pool Service Florida | Procurement-Ready',
+			'desc'  => 'Florida municipal pool & K-12 school pool service. RFP-ready, FL Admin Code 64E-9 compliance logs, public-pool standards, NPDES discharge compliance.',
+		),
+		'vacation-rentals' => array(
+			'title' => 'Vacation Rental Pool Service Florida | Turnover-Day Cleanings',
+			'desc'  => 'Florida vacation rental pool service for Airbnb, VRBO, Hostfully portfolios. Turnover-day cleanings, photo-confirmed visits, owner-direct or PM billing.',
+		),
+		'water-parks' => array(
+			'title' => 'Water Park & Aquatic Attraction Service Florida | Peak-Season',
+			'desc'  => 'Florida water park & aquatic attraction pool service. Wave pools, slide basins, lazy rivers, splash pads. Continuous chemistry monitoring, peak-season staffing.',
+		),
+		'country-clubs' => array(
+			'title' => 'Country Club Pool Service Florida | Member-Standard Care',
+			'desc'  => 'Florida country club pool service. Pre-dawn service, lap pool & family pool dual specs, hot tub bromine, capital project planning. Service worthy of the membership.',
+		),
+		// Service area regional pages
+		'tampa-bay' => array(
+			'title' => 'Tampa Bay Commercial Pool Service | Hillsborough, Pinellas, Pasco',
+			'desc'  => 'Commercial pool service across Tampa Bay — Tampa, St. Pete, Clearwater, Sarasota, Bradenton, Lakewood Ranch. Six counties. Founded here in 2009.',
+		),
+		'orlando' => array(
+			'title' => 'Orlando Commercial Pool Service | Disney Area & Central Florida',
+			'desc'  => 'Commercial pool service across Orlando, Kissimmee, Winter Park, Lake Buena Vista, Lake Mary. Disney-area resorts, vacation homes, master-planned HOAs.',
+		),
+		'south-florida' => array(
+			'title' => 'South Florida Commercial Pool Service | Miami, Fort Lauderdale, Palm Beach',
+			'desc'  => 'Commercial pool service across Miami-Dade, Broward, Palm Beach. High-rise condos, oceanfront resorts, Boca to Miami Beach private clubs.',
+		),
+		'jacksonville' => array(
+			'title' => 'Jacksonville Commercial Pool Service | Duval, St. Johns, Nassau',
+			'desc'  => 'Commercial pool service across Jacksonville, Ponte Vedra, St. Augustine, Amelia Island. Northeast Florida hotels, golf community HOAs, fitness facilities.',
+		),
+		'sw-florida' => array(
+			'title' => 'SW Florida Commercial Pool Service | Naples, Fort Myers, Marco Island',
+			'desc'  => 'Commercial pool service across Naples, Fort Myers, Marco Island, Bonita Springs, Sanibel, Captiva. Gulf-coast resorts, country clubs, beachfront condos.',
+		),
+		'space-coast' => array(
+			'title' => 'Space Coast Commercial Pool Service | Brevard, Indian River',
+			'desc'  => 'Commercial pool service across Cocoa Beach, Melbourne, Vero Beach, Titusville. Atlantic coast hotels, oceanfront condos, Viera planned communities.',
+		),
+		'lakeland' => array(
+			'title' => 'Lakeland & Polk County Commercial Pool Service | I-4 Corridor',
+			'desc'  => 'Commercial pool service across Lakeland, Winter Haven, Davenport, Auburndale. Polk County HOAs, Disney-adjacent vacation homes, fitness facilities.',
+		),
+		// Legal
+		'privacy' => array(
+			'title' => 'Privacy Policy | Pool All-Stars Commercial',
+			'desc'  => 'How Pool All-Stars Commercial collects, uses, and protects information from Florida commercial pool service customers and website visitors.',
+		),
+		'terms' => array(
+			'title' => 'Terms of Service | Pool All-Stars Commercial',
+			'desc'  => 'Terms of service for Pool All-Stars Commercial — service agreement, billing, cancellation, insurance, and liability terms for Florida pool service customers.',
+		),
+		'accessibility' => array(
+			'title' => 'Accessibility Statement | Pool All-Stars Commercial',
+			'desc'  => 'Pool All-Stars Commercial accessibility statement. WCAG 2.1 AA conformance commitment for our Florida commercial pool service website.',
+		),
+	);
+	return apply_filters( 'pasc_seo_registry', $registry );
+}
+
+function pasc_current_seo_key() {
+	if ( is_front_page() || is_home() ) return 'home';
+	if ( is_singular( 'page' ) ) {
+		$slug = get_post_field( 'post_name', get_the_ID() );
+		return $slug;
+	}
+	return '';
+}
+
+function pasc_get_seo() {
+	$key = pasc_current_seo_key();
+	if ( empty( $key ) ) return array();
+	$registry = pasc_seo_registry();
+	return isset( $registry[ $key ] ) ? $registry[ $key ] : array();
+}
+
+// Defer to Yoast / Rank Math if either is active
+function pasc_seo_plugin_active() {
+	return defined( 'WPSEO_VERSION' ) || defined( 'RANK_MATH_VERSION' ) || class_exists( 'All_in_One_SEO_Pack' );
+}
+
+/* ============================================================
+ * Title override via document_title_parts filter
+ * ============================================================ */
+add_filter( 'document_title_parts', 'pasc_filter_title_parts' );
+function pasc_filter_title_parts( $parts ) {
+	if ( pasc_seo_plugin_active() ) return $parts;
+	$seo = pasc_get_seo();
+	if ( ! empty( $seo['title'] ) ) {
+		return array( 'title' => $seo['title'] );
+	}
+	return $parts;
+}
+add_filter( 'document_title_separator', function( $sep ) {
+	return pasc_seo_plugin_active() ? $sep : '';
+} );
+
+/* ============================================================
+ * SEO META TAGS (canonical, OG, Twitter) — uses registry
  * ============================================================ */
 function pasc_seo_meta_tags() {
+	if ( pasc_seo_plugin_active() ) return; // let plugin handle it
+	$seo   = pasc_get_seo();
 	$url   = is_front_page() ? home_url( '/' ) : ( is_singular() ? get_permalink() : home_url( add_query_arg( null, null ) ) );
-	$title = wp_get_document_title();
-	$desc  = '';
-
-	if ( is_singular() ) {
-		$post_excerpt = get_the_excerpt();
-		$desc = ! empty( $post_excerpt ) ? wp_strip_all_tags( $post_excerpt ) : get_bloginfo( 'description' );
-	} else {
-		$desc = get_bloginfo( 'description' );
-	}
-
-	// Per-page meta description override via post meta or page-template constant
-	if ( is_singular() ) {
-		$meta_desc = get_post_meta( get_the_ID(), '_pasc_meta_description', true );
-		if ( ! empty( $meta_desc ) ) $desc = $meta_desc;
-	}
-
-	$image = PASC_URI . '/assets/images/pool-allstars-hero.png';
+	$title = ! empty( $seo['title'] ) ? $seo['title'] : wp_get_document_title();
+	$desc  = ! empty( $seo['desc'] ) ? $seo['desc'] : get_bloginfo( 'description' );
+	$image = ! empty( $seo['image'] ) ? PASC_URI . $seo['image'] : PASC_URI . '/assets/images/pool-allstars-hero.png';
 	?>
 	<meta name="description" content="<?php echo esc_attr( $desc ); ?>">
 	<meta name="robots" content="index, follow">
@@ -82,10 +253,285 @@ function pasc_seo_meta_tags() {
 	<meta property="og:description" content="<?php echo esc_attr( $desc ); ?>">
 	<meta property="og:url" content="<?php echo esc_url( $url ); ?>">
 	<meta property="og:image" content="<?php echo esc_url( $image ); ?>">
+	<meta property="og:site_name" content="<?php echo esc_attr( pasc_company_name() ); ?>">
 	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="<?php echo esc_attr( $title ); ?>">
+	<meta name="twitter:description" content="<?php echo esc_attr( $desc ); ?>">
+	<meta name="twitter:image" content="<?php echo esc_url( $image ); ?>">
 	<?php
 }
 add_action( 'wp_head', 'pasc_seo_meta_tags', 5 );
+
+/* ============================================================
+ * SCHEMA.ORG JSON-LD — sitewide + per-page
+ *
+ * Outputs Organization + BreadcrumbList sitewide, plus page-specific
+ * schema (LocalBusiness on home/contact/regions, Service on service
+ * detail pages, FAQPage on home, Review aggregate sitewide).
+ * ============================================================ */
+function pasc_render_schema() {
+	if ( pasc_seo_plugin_active() ) return;
+	$key = pasc_current_seo_key();
+
+	// 1) Organization — every page
+	$org = array(
+		'@context'    => 'https://schema.org',
+		'@type'       => 'Organization',
+		'@id'         => home_url( '/#organization' ),
+		'name'        => pasc_company_name(),
+		'url'         => home_url( '/' ),
+		'logo'        => PASC_URI . '/assets/images/logo-horizontal.png',
+		'telephone'   => '+1-' . substr( pasc_phone_tel(), 1, 3 ) . '-' . substr( pasc_phone_tel(), 4, 3 ) . '-' . substr( pasc_phone_tel(), 7 ),
+		'foundingDate'=> '2009',
+		'areaServed'  => array(
+			array( '@type' => 'State', 'name' => 'Florida' ),
+		),
+		'sameAs'      => array(),
+	);
+	echo "\n" . '<script type="application/ld+json">' . wp_json_encode( $org, JSON_UNESCAPED_SLASHES ) . '</script>' . "\n";
+
+	// 2) LocalBusiness — home, contact, region pages
+	$local_pages = array( 'home', 'contact', 'tampa-bay', 'orlando', 'south-florida', 'jacksonville', 'sw-florida', 'space-coast', 'lakeland' );
+	if ( in_array( $key, $local_pages, true ) ) {
+		$lb = array(
+			'@context'   => 'https://schema.org',
+			'@type'      => 'LocalBusiness',
+			'@id'        => home_url( '/#localbusiness' ),
+			'name'       => pasc_company_name(),
+			'url'        => home_url( '/' ),
+			'telephone'  => '+1-' . substr( pasc_phone_tel(), 1, 3 ) . '-' . substr( pasc_phone_tel(), 4, 3 ) . '-' . substr( pasc_phone_tel(), 7 ),
+			'image'      => PASC_URI . '/assets/images/pool-allstars-hero.png',
+			'priceRange' => '$$',
+			'address'    => array(
+				'@type'           => 'PostalAddress',
+				'addressRegion'   => 'FL',
+				'addressCountry'  => 'US',
+			),
+			'areaServed' => array(
+				array( '@type' => 'AdministrativeArea', 'name' => 'Tampa Bay, FL' ),
+				array( '@type' => 'AdministrativeArea', 'name' => 'Orlando, FL' ),
+				array( '@type' => 'AdministrativeArea', 'name' => 'Jacksonville, FL' ),
+				array( '@type' => 'AdministrativeArea', 'name' => 'South Florida' ),
+				array( '@type' => 'AdministrativeArea', 'name' => 'SW Florida' ),
+				array( '@type' => 'AdministrativeArea', 'name' => 'Space Coast, FL' ),
+				array( '@type' => 'AdministrativeArea', 'name' => 'Lakeland, FL' ),
+			),
+			'openingHoursSpecification' => array(
+				'@type'     => 'OpeningHoursSpecification',
+				'dayOfWeek' => array( 'Monday','Tuesday','Wednesday','Thursday','Friday','Saturday' ),
+				'opens'     => '07:00',
+				'closes'    => '19:00',
+			),
+			'aggregateRating' => array(
+				'@type'       => 'AggregateRating',
+				'ratingValue' => '4.9',
+				'reviewCount' => '500',
+			),
+		);
+		echo '<script type="application/ld+json">' . wp_json_encode( $lb, JSON_UNESCAPED_SLASHES ) . '</script>' . "\n";
+	}
+
+	// 3) Service schema — service detail pages
+	$services = array( 'weekly-maintenance', 'equipment-repair', 'water-chemistry', 'filter-cleaning', 'green-pool-recovery', 'leak-detection', 'acid-washing', 'pool-renovation' );
+	if ( in_array( $key, $services, true ) ) {
+		$service_names = array(
+			'weekly-maintenance'  => 'Weekly Commercial Pool Maintenance',
+			'equipment-repair'    => 'Commercial Pool Equipment Repair',
+			'water-chemistry'     => 'Commercial Pool Water Chemistry Management',
+			'filter-cleaning'     => 'Commercial Pool Filter Cleaning',
+			'green-pool-recovery' => 'Commercial Green Pool Recovery',
+			'leak-detection'      => 'Commercial Pool Leak Detection',
+			'acid-washing'        => 'Commercial Pool Acid Washing',
+			'pool-renovation'     => 'Commercial Pool Renovation',
+		);
+		$svc = array(
+			'@context'    => 'https://schema.org',
+			'@type'       => 'Service',
+			'serviceType' => $service_names[ $key ],
+			'provider'    => array(
+				'@type'     => 'LocalBusiness',
+				'name'      => pasc_company_name(),
+				'telephone' => '+1-' . substr( pasc_phone_tel(), 1, 3 ) . '-' . substr( pasc_phone_tel(), 4, 3 ) . '-' . substr( pasc_phone_tel(), 7 ),
+			),
+			'areaServed'  => array( '@type' => 'State', 'name' => 'Florida' ),
+			'url'         => get_permalink(),
+		);
+		echo '<script type="application/ld+json">' . wp_json_encode( $svc, JSON_UNESCAPED_SLASHES ) . '</script>' . "\n";
+	}
+
+	// 4) Industry → Service schema
+	$industries = array(
+		'hotels-resorts'    => 'Hotel and Resort Pool Service',
+		'hoas-condos'       => 'HOA and Condominium Pool Service',
+		'fitness-aquatic'   => 'Fitness Center and Aquatic Facility Pool Service',
+		'multi-property'    => 'Multi-Property Portfolio Pool Service',
+		'municipal-schools' => 'Municipal and School Pool Service',
+		'vacation-rentals'  => 'Vacation Rental Pool Service',
+		'water-parks'       => 'Water Park Pool Service',
+		'country-clubs'     => 'Country Club Pool Service',
+	);
+	if ( isset( $industries[ $key ] ) ) {
+		$ind = array(
+			'@context'    => 'https://schema.org',
+			'@type'       => 'Service',
+			'serviceType' => $industries[ $key ],
+			'provider'    => array(
+				'@type'     => 'LocalBusiness',
+				'name'      => pasc_company_name(),
+				'telephone' => '+1-' . substr( pasc_phone_tel(), 1, 3 ) . '-' . substr( pasc_phone_tel(), 4, 3 ) . '-' . substr( pasc_phone_tel(), 7 ),
+			),
+			'areaServed'  => array( '@type' => 'State', 'name' => 'Florida' ),
+			'url'         => get_permalink(),
+		);
+		echo '<script type="application/ld+json">' . wp_json_encode( $ind, JSON_UNESCAPED_SLASHES ) . '</script>' . "\n";
+	}
+
+	// 5) ItemList — overview pages
+	$lists = array(
+		'services'   => array( 'name' => 'Commercial Pool Services', 'items' => array(
+			array( 'Weekly Pool Maintenance',  '/services/weekly-maintenance/' ),
+			array( 'Commercial Pool Water Chemistry', '/services/water-chemistry/' ),
+			array( 'Commercial Pool Equipment Repair', '/services/equipment-repair/' ),
+			array( 'Commercial Pool Filter Cleaning', '/services/filter-cleaning/' ),
+			array( 'Commercial Green Pool Recovery', '/services/green-pool-recovery/' ),
+			array( 'Commercial Pool Leak Detection', '/services/leak-detection/' ),
+			array( 'Commercial Pool Acid Washing', '/services/acid-washing/' ),
+			array( 'Commercial Pool Renovation', '/services/pool-renovation/' ),
+		) ),
+		'industries' => array( 'name' => 'Industries Served', 'items' => array(
+			array( 'Hotels & Resorts',     '/industries/hotels-resorts/' ),
+			array( 'HOAs & Condos',        '/industries/hoas-condos/' ),
+			array( 'Fitness & Aquatic',    '/industries/fitness-aquatic/' ),
+			array( 'Multi-Property',       '/industries/multi-property/' ),
+			array( 'Municipal & Schools',  '/industries/municipal-schools/' ),
+			array( 'Vacation Rentals',     '/industries/vacation-rentals/' ),
+			array( 'Water Parks',          '/industries/water-parks/' ),
+			array( 'Country Clubs',        '/industries/country-clubs/' ),
+		) ),
+		'service-area' => array( 'name' => 'Florida Service Areas', 'items' => array(
+			array( 'Tampa Bay',     '/service-area/tampa-bay/' ),
+			array( 'Orlando',       '/service-area/orlando/' ),
+			array( 'South Florida', '/service-area/south-florida/' ),
+			array( 'Jacksonville',  '/service-area/jacksonville/' ),
+			array( 'SW Florida',    '/service-area/sw-florida/' ),
+			array( 'Space Coast',   '/service-area/space-coast/' ),
+			array( 'Lakeland',      '/service-area/lakeland/' ),
+		) ),
+	);
+	if ( isset( $lists[ $key ] ) ) {
+		$il_items = array();
+		foreach ( $lists[ $key ]['items'] as $i => $item ) {
+			$il_items[] = array(
+				'@type'    => 'ListItem',
+				'position' => $i + 1,
+				'name'     => $item[0],
+				'url'      => home_url( $item[1] ),
+			);
+		}
+		$il = array(
+			'@context'         => 'https://schema.org',
+			'@type'            => 'ItemList',
+			'name'             => $lists[ $key ]['name'],
+			'url'              => get_permalink(),
+			'itemListElement'  => $il_items,
+		);
+		echo '<script type="application/ld+json">' . wp_json_encode( $il, JSON_UNESCAPED_SLASHES ) . '</script>' . "\n";
+	}
+
+	// 6) FAQPage — homepage
+	if ( $key === 'home' ) {
+		$faqs = array(
+			array( 'What is included in commercial pool service?', 'Standard commercial weekly pool maintenance includes water chemistry testing and balancing, brushing, vacuuming, basket emptying, equipment inspection, filter pressure check, and a same-day photo-confirmed service report.' ),
+			array( 'How quickly can you provide a Certificate of Insurance?', 'COI is provided within 24 hours of contract signing, naming your property as additional insured.' ),
+			array( 'Do you offer multi-property pricing?', 'Yes. Volume pricing kicks in at 3+ properties under one contract. Portfolios get a single account manager and consolidated invoicing.' ),
+			array( 'What areas of Florida do you serve?', 'We service commercial properties across Tampa Bay, Orlando, Jacksonville, Sarasota, Naples, South Florida, the Space Coast, and Lakeland — statewide for commercial portfolios.' ),
+			array( 'Are your technicians certified?', 'All technicians hold Certified Pool/Spa Operator (CPO) certification from the Pool & Hot Tub Alliance and complete OSHA chemical handling training.' ),
+			array( 'What is your response time for repairs?', 'Same business day for diagnosis. Most repairs are completed within 48 hours. 24/7 emergency dispatch is available for contract customers.' ),
+			array( 'How does your billing work?', 'Standard billing is net-30 monthly invoicing in advance. Multi-property portfolios receive consolidated invoices with per-property line items for accounting allocation.' ),
+		);
+		$faq_entities = array();
+		foreach ( $faqs as $f ) {
+			$faq_entities[] = array(
+				'@type' => 'Question',
+				'name'  => $f[0],
+				'acceptedAnswer' => array( '@type' => 'Answer', 'text' => $f[1] ),
+			);
+		}
+		echo '<script type="application/ld+json">' . wp_json_encode( array(
+			'@context'   => 'https://schema.org',
+			'@type'      => 'FAQPage',
+			'mainEntity' => $faq_entities,
+		), JSON_UNESCAPED_SLASHES ) . '</script>' . "\n";
+	}
+
+	// 7) ContactPage
+	if ( $key === 'contact' ) {
+		echo '<script type="application/ld+json">' . wp_json_encode( array(
+			'@context' => 'https://schema.org',
+			'@type'    => 'ContactPage',
+			'url'      => get_permalink(),
+			'name'     => 'Contact ' . pasc_company_name(),
+		), JSON_UNESCAPED_SLASHES ) . '</script>' . "\n";
+	}
+
+	// 8) AboutPage
+	if ( $key === 'about' ) {
+		echo '<script type="application/ld+json">' . wp_json_encode( array(
+			'@context'   => 'https://schema.org',
+			'@type'      => 'AboutPage',
+			'url'        => get_permalink(),
+			'name'       => 'About ' . pasc_company_name(),
+			'mainEntity' => array(
+				'@type'        => 'Organization',
+				'name'         => pasc_company_name(),
+				'foundingDate' => '2009',
+				'description'  => 'Florida commercial pool service company since 2009.',
+			),
+		), JSON_UNESCAPED_SLASHES ) . '</script>' . "\n";
+	}
+
+	// 9) BreadcrumbList — every non-home page
+	if ( ! is_front_page() && is_singular( 'page' ) ) {
+		$crumbs = pasc_build_breadcrumb_trail();
+		if ( count( $crumbs ) > 1 ) {
+			$bc_items = array();
+			foreach ( $crumbs as $i => $c ) {
+				$bc_items[] = array(
+					'@type'    => 'ListItem',
+					'position' => $i + 1,
+					'name'     => $c['name'],
+					'item'     => $c['url'],
+				);
+			}
+			echo '<script type="application/ld+json">' . wp_json_encode( array(
+				'@context'        => 'https://schema.org',
+				'@type'           => 'BreadcrumbList',
+				'itemListElement' => $bc_items,
+			), JSON_UNESCAPED_SLASHES ) . '</script>' . "\n";
+		}
+	}
+}
+add_action( 'wp_head', 'pasc_render_schema', 6 );
+
+function pasc_build_breadcrumb_trail() {
+	$trail = array(
+		array( 'name' => 'Home', 'url' => home_url( '/' ) ),
+	);
+	if ( ! is_singular( 'page' ) ) return $trail;
+	$post_id = get_the_ID();
+	$ancestors = array_reverse( get_post_ancestors( $post_id ) );
+	foreach ( $ancestors as $aid ) {
+		$trail[] = array(
+			'name' => get_the_title( $aid ),
+			'url'  => get_permalink( $aid ),
+		);
+	}
+	$trail[] = array(
+		'name' => get_the_title( $post_id ),
+		'url'  => get_permalink( $post_id ),
+	);
+	return $trail;
+}
 
 /* ============================================================
  * HELPER: render breadcrumbs

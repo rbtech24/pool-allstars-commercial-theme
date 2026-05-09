@@ -20,7 +20,10 @@
         <li><a href="<?php echo esc_url( home_url( '/industries/hoas-condos/' ) ); ?>">HOAs &amp; condos</a></li>
         <li><a href="<?php echo esc_url( home_url( '/industries/fitness-aquatic/' ) ); ?>">Fitness &amp; aquatic</a></li>
         <li><a href="<?php echo esc_url( home_url( '/industries/multi-property/' ) ); ?>">Multi-property</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/industries/' ) ); ?>">All industries</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/industries/municipal-schools/' ) ); ?>">Municipal &amp; schools</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/industries/vacation-rentals/' ) ); ?>">Vacation rentals</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/industries/water-parks/' ) ); ?>">Water parks</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/industries/country-clubs/' ) ); ?>">Country clubs</a></li>
       </ul>
     </div>
     <div>
@@ -29,7 +32,10 @@
         <li><a href="<?php echo esc_url( home_url( '/service-area/tampa-bay/' ) ); ?>">Tampa Bay</a></li>
         <li><a href="<?php echo esc_url( home_url( '/service-area/orlando/' ) ); ?>">Orlando</a></li>
         <li><a href="<?php echo esc_url( home_url( '/service-area/south-florida/' ) ); ?>">South Florida</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/service-area/' ) ); ?>">All Florida</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/service-area/jacksonville/' ) ); ?>">Jacksonville</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/service-area/sw-florida/' ) ); ?>">SW Florida</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/service-area/space-coast/' ) ); ?>">Space Coast</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/service-area/lakeland/' ) ); ?>">Lakeland</a></li>
       </ul>
     </div>
     <div>
