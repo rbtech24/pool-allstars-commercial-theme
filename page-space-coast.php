@@ -9,6 +9,9 @@
 <div class="region-card"><h3>Indian River County</h3><p class="meta">Vero Beach, Sebastian, Fellsmere — coastal &amp; inland.</p><div class="cities"><span class="city-chip">Vero Beach</span><span class="city-chip">Sebastian</span><span class="city-chip">Fellsmere</span></div></div>
 </div></div></section>
 
+<?php pasc_render_geo_section( 'space-coast' ); ?>
 <?php get_template_part( 'template-parts/industries-grid' ); ?>
+<?php pasc_render_testimonials_section( 'space-coast', 'What customers say', 'Trusted by Space Coast property managers' ); ?>
 <?php $pasc_cta_heading = 'Space Coast property?'; $pasc_cta_heading_red = "Let's talk."; get_template_part( 'template-parts/cta-final' ); ?>
+<?php pasc_last_updated(); ?>
 <?php get_footer(); ?>

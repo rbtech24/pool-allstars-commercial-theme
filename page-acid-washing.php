@@ -12,4 +12,5 @@
 <?php get_template_part( 'template-parts/industries-grid' ); ?>
 <?php get_template_part( 'template-parts/areas-grid' ); ?>
 <?php $pasc_cta_heading = 'Stained plaster?'; $pasc_cta_heading_red = "Restore, don't resurface."; get_template_part( 'template-parts/cta-final' ); ?>
+<?php pasc_last_updated(); ?>
 <?php get_footer(); ?>

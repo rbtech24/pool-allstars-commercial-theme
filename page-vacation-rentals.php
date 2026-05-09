@@ -18,6 +18,8 @@
 </div></div></section>
 
 <?php get_template_part( 'template-parts/services-grid' ); ?>
+<?php pasc_render_testimonials_section( 'vacation-rentals', 'What rental hosts say', 'Trusted by Florida vacation rental owners &amp; PMs' ); ?>
 <?php get_template_part( 'template-parts/areas-grid' ); ?>
 <?php $pasc_cta_heading = 'Pool service that'; $pasc_cta_heading_red = 'protects your reviews.'; get_template_part( 'template-parts/cta-final' ); ?>
+<?php pasc_last_updated(); ?>
 <?php get_footer(); ?>

@@ -29,4 +29,5 @@
 
 <?php $pasc_cta_heading = 'Hotel pool you can'; $pasc_cta_heading_red = 'stop worrying about.'; get_template_part( 'template-parts/cta-final' ); ?>
 
+<?php pasc_last_updated(); ?>
 <?php get_footer(); ?>

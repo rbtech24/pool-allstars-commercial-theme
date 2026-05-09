@@ -10,6 +10,9 @@
 <div class="region-card"><h3>Surrounding Polk</h3><p class="meta">Auburndale, Bartow, Lake Wales, Davenport — Disney-adjacent.</p><div class="cities"><span class="city-chip">Auburndale</span><span class="city-chip">Bartow</span><span class="city-chip">Lake Wales</span><span class="city-chip">Davenport</span></div></div>
 </div></div></section>
 
+<?php pasc_render_geo_section( 'lakeland' ); ?>
 <?php get_template_part( 'template-parts/industries-grid' ); ?>
+<?php pasc_render_testimonials_section( 'lakeland', 'What customers say', 'Trusted by Polk County property managers' ); ?>
 <?php $pasc_cta_heading = 'Lakeland property?'; $pasc_cta_heading_red = "Let's talk."; get_template_part( 'template-parts/cta-final' ); ?>
+<?php pasc_last_updated(); ?>
 <?php get_footer(); ?>

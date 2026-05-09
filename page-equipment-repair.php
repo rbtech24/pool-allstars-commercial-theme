@@ -12,4 +12,5 @@
 <?php get_template_part( 'template-parts/industries-grid' ); ?>
 <?php get_template_part( 'template-parts/areas-grid' ); ?>
 <?php $pasc_cta_heading = 'Equipment down?'; $pasc_cta_heading_red = 'Get it back online fast.'; $pasc_cta_body = '24/7 emergency dispatch for contract customers.'; get_template_part( 'template-parts/cta-final' ); ?>
+<?php pasc_last_updated(); ?>
 <?php get_footer(); ?>

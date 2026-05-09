@@ -11,4 +11,5 @@
 
 <?php get_template_part( 'template-parts/areas-grid' ); ?>
 <?php $pasc_cta_heading = 'Suspect a leak?'; $pasc_cta_heading_red = 'Find it before it grows.'; get_template_part( 'template-parts/cta-final' ); ?>
+<?php pasc_last_updated(); ?>
 <?php get_footer(); ?>

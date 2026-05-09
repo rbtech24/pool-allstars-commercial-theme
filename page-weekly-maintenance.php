@@ -22,4 +22,5 @@
 <?php get_template_part( 'template-parts/industries-grid' ); ?>
 <?php get_template_part( 'template-parts/areas-grid' ); ?>
 <?php $pasc_cta_heading = 'Predictable weekly service.'; $pasc_cta_heading_red = 'Photo-confirmed every time.'; get_template_part( 'template-parts/cta-final' ); ?>
+<?php pasc_last_updated(); ?>
 <?php get_footer(); ?>

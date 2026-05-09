@@ -37,9 +37,11 @@
       <img src="<?php echo esc_url( PASC_URI . '/assets/images/logo-horizontal.png' ); ?>" alt="<?php echo esc_attr( pasc_company_name() ); ?>">
     </a>
     <nav class="primary" aria-label="Primary navigation">
-      <a href="<?php echo esc_url( home_url( '/industries/' ) ); ?>"<?php echo ( is_page( 'industries' ) || ( is_page() && wp_get_post_parent_id( get_the_ID() ) == get_page_by_path( 'industries' )->ID ) ) ? ' class="active"' : ''; ?>>Industries</a>
+      <a href="<?php echo esc_url( home_url( '/industries/' ) ); ?>"<?php echo ( is_page( 'industries' ) || ( is_page() && wp_get_post_parent_id( get_the_ID() ) == ( get_page_by_path( 'industries' ) ? get_page_by_path( 'industries' )->ID : 0 ) ) ) ? ' class="active"' : ''; ?>>Industries</a>
       <a href="<?php echo esc_url( home_url( '/services/' ) ); ?>"<?php echo ( is_page( 'services' ) || ( is_page() && wp_get_post_parent_id( get_the_ID() ) == ( get_page_by_path( 'services' ) ? get_page_by_path( 'services' )->ID : 0 ) ) ) ? ' class="active"' : ''; ?>>Services</a>
+      <a href="<?php echo esc_url( home_url( '/pricing/' ) ); ?>"<?php echo is_page( 'pricing' ) ? ' class="active"' : ''; ?>>Pricing</a>
       <a href="<?php echo esc_url( home_url( '/service-area/' ) ); ?>"<?php echo ( is_page( 'service-area' ) || ( is_page() && wp_get_post_parent_id( get_the_ID() ) == ( get_page_by_path( 'service-area' ) ? get_page_by_path( 'service-area' )->ID : 0 ) ) ) ? ' class="active"' : ''; ?>>Service area</a>
+      <a href="<?php echo esc_url( home_url( '/resources/' ) ); ?>"<?php echo ( is_page( 'resources' ) || ( is_page() && wp_get_post_parent_id( get_the_ID() ) == ( get_page_by_path( 'resources' ) ? get_page_by_path( 'resources' )->ID : 0 ) ) ) ? ' class="active"' : ''; ?>>Resources</a>
       <a href="<?php echo esc_url( home_url( '/about/' ) ); ?>"<?php echo is_page( 'about' ) ? ' class="active"' : ''; ?>>About</a>
       <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"<?php echo is_page( 'contact' ) ? ' class="active"' : ''; ?>>Contact</a>
     </nav>
@@ -63,7 +65,10 @@
   <nav>
     <a href="<?php echo esc_url( home_url( '/industries/' ) ); ?>">Industries</a>
     <a href="<?php echo esc_url( home_url( '/services/' ) ); ?>">Services</a>
+    <a href="<?php echo esc_url( home_url( '/pricing/' ) ); ?>">Pricing</a>
     <a href="<?php echo esc_url( home_url( '/service-area/' ) ); ?>">Service area</a>
+    <a href="<?php echo esc_url( home_url( '/resources/' ) ); ?>">Resources</a>
+    <a href="<?php echo esc_url( home_url( '/case-studies/' ) ); ?>">Case studies</a>
     <a href="<?php echo esc_url( home_url( '/about/' ) ); ?>">About</a>
     <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">Contact</a>
   </nav>

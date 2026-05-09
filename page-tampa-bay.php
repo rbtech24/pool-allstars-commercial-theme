@@ -13,6 +13,9 @@
 <div class="region-card"><h3>Sarasota County</h3><p class="meta">Sarasota, Venice, North Port, Englewood.</p><div class="cities"><span class="city-chip">Sarasota</span><span class="city-chip">Venice</span><span class="city-chip">North Port</span><span class="city-chip">Englewood</span></div></div>
 </div></div></section>
 
+<?php pasc_render_geo_section( 'tampa-bay' ); ?>
 <?php get_template_part( 'template-parts/industries-grid' ); ?>
+<?php pasc_render_testimonials_section( 'tampa-bay', 'What customers say', 'Trusted by Tampa Bay property managers' ); ?>
 <?php $pasc_cta_heading = 'Tampa Bay property?'; $pasc_cta_heading_red = "Let's talk."; get_template_part( 'template-parts/cta-final' ); ?>
+<?php pasc_last_updated(); ?>
 <?php get_footer(); ?>

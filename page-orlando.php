@@ -11,6 +11,9 @@
 <div class="region-card"><h3>Lake County</h3><p class="meta">Clermont, Mount Dora, Tavares — golf community pools.</p><div class="cities"><span class="city-chip">Clermont</span><span class="city-chip">Mount Dora</span><span class="city-chip">Tavares</span></div></div>
 </div></div></section>
 
+<?php pasc_render_geo_section( 'orlando' ); ?>
 <?php get_template_part( 'template-parts/industries-grid' ); ?>
+<?php pasc_render_testimonials_section( 'orlando', 'What customers say', 'Trusted by Orlando-area property managers' ); ?>
 <?php $pasc_cta_heading = 'Orlando property?'; $pasc_cta_heading_red = "Let's talk."; get_template_part( 'template-parts/cta-final' ); ?>
+<?php pasc_last_updated(); ?>
 <?php get_footer(); ?>

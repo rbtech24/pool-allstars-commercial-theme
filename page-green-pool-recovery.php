@@ -12,4 +12,5 @@
 <?php get_template_part( 'template-parts/industries-grid' ); ?>
 <?php get_template_part( 'template-parts/areas-grid' ); ?>
 <?php $pasc_cta_heading = 'Green pool?'; $pasc_cta_heading_red = 'Call now.'; $pasc_cta_body = 'Same-day assessment. Recovery starts the same day or next-day for most properties.'; get_template_part( 'template-parts/cta-final' ); ?>
+<?php pasc_last_updated(); ?>
 <?php get_footer(); ?>

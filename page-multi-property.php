@@ -27,4 +27,5 @@
 
 <?php get_template_part( 'template-parts/areas-grid' ); ?>
 <?php $pasc_cta_heading = 'Consolidate your'; $pasc_cta_heading_red = 'pool vendors.'; $pasc_cta_primary_label = 'Request portfolio proposal'; get_template_part( 'template-parts/cta-final' ); ?>
+<?php pasc_last_updated(); ?>
 <?php get_footer(); ?>

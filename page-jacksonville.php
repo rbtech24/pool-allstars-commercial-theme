@@ -10,6 +10,9 @@
 <div class="region-card"><h3>Nassau County</h3><p class="meta">Fernandina Beach, Amelia Island, Yulee.</p><div class="cities"><span class="city-chip">Fernandina Beach</span><span class="city-chip">Amelia Island</span><span class="city-chip">Yulee</span></div></div>
 </div></div></section>
 
+<?php pasc_render_geo_section( 'jacksonville' ); ?>
 <?php get_template_part( 'template-parts/industries-grid' ); ?>
+<?php pasc_render_testimonials_section( 'jacksonville', 'What customers say', 'Trusted by Northeast Florida property managers' ); ?>
 <?php $pasc_cta_heading = 'Jacksonville property?'; $pasc_cta_heading_red = "Let's talk."; get_template_part( 'template-parts/cta-final' ); ?>
+<?php pasc_last_updated(); ?>
 <?php get_footer(); ?>

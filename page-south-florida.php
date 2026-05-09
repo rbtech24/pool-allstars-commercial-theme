@@ -10,6 +10,9 @@
 <div class="region-card"><h3>Palm Beach</h3><p class="meta">West Palm Beach, Boca Raton, Boynton Beach, Delray Beach.</p><div class="cities"><span class="city-chip">West Palm Beach</span><span class="city-chip">Boca Raton</span><span class="city-chip">Boynton Beach</span><span class="city-chip">Delray Beach</span></div></div>
 </div></div></section>
 
+<?php pasc_render_geo_section( 'south-florida' ); ?>
 <?php get_template_part( 'template-parts/industries-grid' ); ?>
+<?php pasc_render_testimonials_section( 'south-florida', 'What customers say', 'Trusted by South Florida property managers' ); ?>
 <?php $pasc_cta_heading = 'South Florida property?'; $pasc_cta_heading_red = "Let's talk."; get_template_part( 'template-parts/cta-final' ); ?>
+<?php pasc_last_updated(); ?>
 <?php get_footer(); ?>

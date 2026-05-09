@@ -18,6 +18,8 @@
 </div></div></section>
 
 <?php get_template_part( 'template-parts/services-grid' ); ?>
+<?php pasc_render_testimonials_section( 'municipal-schools', 'What public-sector buyers say', 'Trusted by Florida cities, counties &amp; school districts' ); ?>
 <?php get_template_part( 'template-parts/areas-grid' ); ?>
 <?php $pasc_cta_heading = 'Send us your'; $pasc_cta_heading_red = 'solicitation.'; $pasc_cta_body = 'Email RFP, ITB, or RFQ. Response back within your timeline, properly formatted.'; $pasc_cta_primary_label = 'Submit RFP'; get_template_part( 'template-parts/cta-final' ); ?>
+<?php pasc_last_updated(); ?>
 <?php get_footer(); ?>

@@ -9,6 +9,9 @@
 <div class="region-card"><h3>Lee County</h3><p class="meta">Fort Myers, Cape Coral, Estero, Sanibel, Captiva.</p><div class="cities"><span class="city-chip">Fort Myers</span><span class="city-chip">Cape Coral</span><span class="city-chip">Estero</span><span class="city-chip">Sanibel</span><span class="city-chip">Captiva</span></div></div>
 </div></div></section>
 
+<?php pasc_render_geo_section( 'sw-florida' ); ?>
 <?php get_template_part( 'template-parts/industries-grid' ); ?>
+<?php pasc_render_testimonials_section( 'sw-florida', 'What customers say', 'Trusted by SW Florida property managers' ); ?>
 <?php $pasc_cta_heading = 'SW Florida property?'; $pasc_cta_heading_red = "Let's talk."; get_template_part( 'template-parts/cta-final' ); ?>
+<?php pasc_last_updated(); ?>
 <?php get_footer(); ?>

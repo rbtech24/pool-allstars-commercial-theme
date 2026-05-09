@@ -12,4 +12,5 @@
 <?php get_template_part( 'template-parts/industries-grid' ); ?>
 <?php get_template_part( 'template-parts/areas-grid' ); ?>
 <?php $pasc_cta_heading = 'Pool chemistry that'; $pasc_cta_heading_red = 'passes inspection.'; get_template_part( 'template-parts/cta-final' ); ?>
+<?php pasc_last_updated(); ?>
 <?php get_footer(); ?>

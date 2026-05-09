@@ -18,6 +18,8 @@
 </div></div></section>
 
 <?php get_template_part( 'template-parts/services-grid' ); ?>
+<?php pasc_render_testimonials_section( 'water-parks', 'What water-park operators say', 'Trusted by Florida aquatic attractions' ); ?>
 <?php get_template_part( 'template-parts/areas-grid' ); ?>
 <?php $pasc_cta_heading = 'Water park ready for'; $pasc_cta_heading_red = 'peak season?'; get_template_part( 'template-parts/cta-final' ); ?>
+<?php pasc_last_updated(); ?>
 <?php get_footer(); ?>
